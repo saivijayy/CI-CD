@@ -129,3 +129,9 @@ bash
 Copy code
 git push origin feature/your-feature
 Open a pull request in the original repository.
+
+Push commands for check
+aws ecr-public get-login-password --region us-east-1 | docker login --username AWS --password-stdin public.ecr.aws/k4n1g1v8
+docker build -t check .
+docker tag check:latest public.ecr.aws/k4n1g1v8/check:latest
+docker push public.ecr.aws/k4n1g1v8/check:latest
